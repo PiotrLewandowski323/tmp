@@ -1,0 +1,13 @@
+name: Failing Workflow
+
+on:
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests to the main branch
+
+jobs:
+  fail_always:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Always Fail Step
+        run: exit 1  # This command will always exit with a non-zero code, causing the step to fail
